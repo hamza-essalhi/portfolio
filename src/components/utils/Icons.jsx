@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const BouncingIcon = ({ icon }) => {
@@ -17,6 +17,9 @@ const BouncingIcon = ({ icon }) => {
     vy: 2 * (Math.random() - 0.5), // Initial velocity in y direction
   });
 
+  const [size, setSize] = useState(iconSize); // State for the icon size
+  const [className, setClassName] = useState(""); // State for the icon size
+
   const updatePosition = () => {
     setPosition((prevPosition) => {
       let { x, y, vx, vy } = prevPosition;
@@ -29,16 +32,16 @@ const BouncingIcon = ({ icon }) => {
         x = 0;
         vx *= -1;
       }
-      if (x + iconSize >= window.innerWidth) {
-        x = window.innerWidth - iconSize;
+      if (x + size >= window.innerWidth) {
+        x = window.innerWidth - size;
         vx *= -1;
       }
       if (y <= 0) {
         y = 0;
         vy *= -1;
       }
-      if (y + iconSize >= window.innerHeight) {
-        y = window.innerHeight - iconSize;
+      if (y + size >= window.innerHeight) {
+        y = window.innerHeight - size;
         vy *= -1;
       }
 
@@ -57,8 +60,8 @@ const BouncingIcon = ({ icon }) => {
     let finalY = position.y + info.offset.y;
 
     // Check if final position is within drag constraints
-    finalX = Math.max(0, Math.min(finalX, window.innerWidth - iconSize));
-    finalY = Math.max(0, Math.min(finalY, window.innerHeight - iconSize));
+    finalX = Math.max(0, Math.min(finalX, window.innerWidth - size));
+    finalY = Math.max(0, Math.min(finalY, window.innerHeight - size));
 
     // Adjust the velocity based on drag distance - decrease the multiplier for slower speed
     setPosition({
@@ -74,33 +77,70 @@ const BouncingIcon = ({ icon }) => {
   React.useEffect(() => {
     const interval = setInterval(updatePosition, 16);
     return () => clearInterval(interval);
-  }, []);
+  });
 
+  useEffect(() => {
+    const getRandomSize = () => {
+      const min = 20;
+      const max = 40;
+      const size = Math.floor(Math.random() * (max - min + 1)) + min;
+      return size;
+    };
+
+    const newSize = getRandomSize();
+    setSize(newSize);
+  }, []); // Run only once on mount
+  useEffect(() => {
+    const getRandomAnimation = () => {
+      const classNames = ["react-icon", "react-icon-speed", "react-icon-super-speed"];
+      const randomIndex = Math.floor(Math.random() * classNames.length);
+      return classNames[randomIndex];
+    };
+  
+    if((icon === "/img/physics.png" || icon === "/img/structure.png")) {
+      const newClassName = getRandomAnimation();
+    setClassName(newClassName);
+    }
+  }, [icon]);
+  const [isIdea, setIsIdea] = useState(true); // State to toggle between idea.png and idea-of.png
+
+  useEffect(() => {
+    if (icon === '/img/idea.png') {
+      const interval = setInterval(() => {
+        setIsIdea((prevIsIdea) => !prevIsIdea);
+      }, 600);
+
+      return () => clearInterval(interval);
+    }
+  }, [icon]);
+  let currentIcon = icon;
+  if (icon === '/img/idea.png') {
+    currentIcon = isIdea ? '/img/idea.png' : '/img/idea-of.png';
+  } 
   return (
-    <div  className='random-icons'>
-    <motion.img
-    initial={{ x: -3000 }}
-    animate={{ x: 0 }}
-    exit={{ x: -300 }}
-    transition={{
-        delay:1.6,
-      duration: 1, // Change this to control the overall duration of the animation
-      ease: "easeInOut", // You can experiment with different easing functions
-    }}
-
-      style={{
-        top: position.y,
-        left: position.x,
-      }}
-      
-      drag
-      dragConstraints={dragConstraints}
-      dragElastic={0.1}
-      onDragEnd={handleDragEnd}
-      className='row'
-      src={icon} alt=""
-    />
-      
+    <div className='random-icons'>
+      <motion.img
+        initial={{ x: -3000 }}
+        animate={{ x: 0 }}
+        exit={{ x: -300 }}
+        transition={{
+          duration: 1, // Change this to control the overall duration of the animation
+          ease: "easeInOut", // You can experiment with different easing functions
+        }}
+        style={{
+          width: `${size}px`,
+          height: `${size}px`,
+          top: position.y,
+          left: position.x,
+        }}
+        drag
+        dragConstraints={dragConstraints}
+        dragElastic={0.1}
+        onDragEnd={handleDragEnd}
+        className={(icon === "/img/physics.png" || icon === "/img/structure.png") ? `row max-sm:!w-5 max-sm:!h-5 ${className}` : 'row max-sm:!w-5 max-sm:!h-5'}
+        src={currentIcon}
+        alt={currentIcon}
+      />
     </div>
   );
 };

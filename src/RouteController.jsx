@@ -4,13 +4,18 @@ import TopNav from './components/home/TopNav';
 import Footer from './components/home/Footer';
 import BouncingIcon from './components/utils/Icons';
 const icons = [
+  '/img/physics.png',
   '/img/python.png',
   '/img/css-3.png',
   '/img/js-file.png',
+  '/img/physics.png',
   '/img/programing.png',
   '/img/physics.png',
   '/img/sql.png',
-  '/img/txt.png'
+  '/img/txt.png',
+  '/img/idea.png',
+  '/img/structure.png'
+ 
 ];
 
 export default function RouteController() {
