@@ -29,7 +29,8 @@ nav {
   top: 0;
   z-index: 1000;
 }
-nav a, nav button {
+nav a,
+nav button {
   color: white;
 }
 nav button {
@@ -50,8 +51,13 @@ nav .active {
 }
 
 .home .top h1 {
+  filter: drop-shadow(1px 1px 5px #ffffff);
   font-size: 100px;
   font-weight: bolder;
+  color: white;
+  text-shadow: 0 1px #8da1ff, -1px 0 #c0cbff, -1px 2px #8da1ff, -2px 1px #c0cbff, -2px 3px #8da1ff, -3px 2px #c0cbff, -3px 4px #8da1ff, -4px 3px #c0cbff, -4px 5px #8da1ff, -5px 4px #c0cbff, -5px 6px #8da1ff, -6px 5px #c0cbff, -6px 7px #8da1ff, -7px 6px #c0cbff, -7px 8px #8da1ff, -8px 7px #c0cbff;
+}
+.home .top h3 {
   color: white;
 }
 .home .top .image-container {
@@ -112,11 +118,16 @@ nav .active {
   right: 0;
   top: 50%;
 }
-.home .top .icons .icon, .home .top .icons .icon-text {
+.home .top .icons .icon,
+.home .top .icons .icon-text {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
   color: #00022B !important;
   padding: 5px;
   border-radius: 3px;
+}
+.home .top .map img {
+  width: 100px;
+  filter: drop-shadow(1px 10px 20px #ff6e6e);
 }
 .home .middel .col {
   min-height: 30vh;

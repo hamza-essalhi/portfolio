@@ -27,9 +27,37 @@ export default function Home() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
   const name = "HAMZA ESSALHI";
+  const renderLetters = () => {
+    const letters = [];
+    const delayPerLetter = 0.1; // Adjust this for the desired delay between each letter
+
+    for (let i = 0; i < name.length; i++) {
+      if (name[i] === " ") {
+        letters.push(<span className="mx-3" key={i}>{" "}</span>);
+      } else {
+        letters.push(
+          <motion.h1
+            key={i}
+            className='max-sm:!text-lg animated-letter mx-1'
+            initial={{ x: -200 - i * Math.floor(Math.random() * (20 - 0)) }}
+            animate={{ x: 0, opacity: 1 }}
+            whileHover={{ scale: 1.4 }}
+            whileTap={{ scale: 0.8 }}
+            transition={{ duration: 0.3 }}
+            viewport={{ once: true }}
+            style={{ marginLeft: `${i * delayPerLetter}s` }} // Delay for each letter
+          >
+            {name[i]}
+          </motion.h1>
+        );
+      }
+    }
+    return letters;
+  };
   return (
-    <div className='home'>
+    <div className='home mx-3'>
       <div className="top flex flex-col items-center justify-center gap-5 mx-3">
         <motion.div
           initial={{ opacity: 0 }}
@@ -147,26 +175,32 @@ export default function Home() {
 
 
         </div>
-        <div className='flex'>
-
-          {name.split("-").map((letter, index) => (
-            <motion.h1
-              initial={{ x: -200 - index * Math.floor(Math.random() * (20 - 0)), opacity: 0.5 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 1 }}
-              viewport={{ once: true }}
-              key={index}
-              className='max-sm:!text-lg animated-letter'
-            >
-              {letter}
-            </motion.h1>
-          ))}
+        <div className='flex flex-col mt-10'>
+          <div className='flex justify-center'>
+            {renderLetters()}
+          </div>
+          <div className='flex gap-2 mt-20'>
+            <h3 className='flex-1'>
+              Experienced Freelance Full-Stack Web Developer Specializing in the MERN Stack
+            </h3>
+            <div className='flex flex-col items-center gap-4 map flex-1'>
+              <div className='w-full flex justify-end'>
+              <img className=' max-sm:!w-20' src="/img/mongodb.png" alt="/img/mongodb.png" />
+              </div>
+              <img className=' max-sm:!w-20' src="/img/express.png" alt="/img/express.png" />
+              <div className='w-full flex justify-end'>
+              <img className=' max-sm:!w-20' src="/img/physics.png" alt="/img/physics.png" />
+              </div>
+             
+              <img className=' max-sm:!w-20' src="/img/node-js.png" alt="/img/node-js.png" />
+            </div>
+          </div>
         </div>
       </div>
       <div className="middel flex gap-4 mx-3 mt-16">
-          <div className="col flex-1">1</div>
-          <div className="col flex-1">2</div>
-          <div className="col flex-1">3</div>
+        <div className="col flex-1">1</div>
+        <div className="col flex-1">2</div>
+        <div className="col flex-1">3</div>
       </div>
     </div>
   );

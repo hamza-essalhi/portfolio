@@ -10,11 +10,11 @@ const icons = [
   '/img/js-file.png',
   '/img/physics.png',
   '/img/programing.png',
-  '/img/physics.png',
   '/img/sql.png',
   '/img/txt.png',
-  '/img/idea.png',
-  '/img/structure.png'
+  '/img/idea.png',,
+  "/img/node-js.png",
+  "/img/mongodb.png"
  
 ];
 
