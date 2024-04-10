@@ -29,8 +29,7 @@ nav {
   top: 0;
   z-index: 1000;
 }
-nav a,
-nav button {
+nav a, nav button {
   color: white;
 }
 nav button {
@@ -113,8 +112,7 @@ nav .active {
   right: 0;
   top: 50%;
 }
-.home .top .icons .icon,
-.home .top .icons .icon-text {
+.home .top .icons .icon, .home .top .icons .icon-text {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
   color: #00022B !important;
   padding: 5px;
@@ -130,12 +128,13 @@ nav .active {
   overflow: hidden;
   position: absolute;
   width: 100%;
-  height: 300vh;
-  opacity: 1;
+  height: 100vh;
 }
 .random-icons .row {
-  filter: drop-shadow(1px 1px 10px rgba(255, 255, 255, 0.7098039216));
+  filter: drop-shadow(1px 1px 10px #ffffff);
   z-index: 100;
+  width: 50px;
+  height: 50px;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -169,7 +168,7 @@ nav .active {
   }
 }
 .random-icons .react-icon-super-speed {
-  animation: rotation-animation 0.9s linear infinite;
+  animation: rotation-animation 0.5s linear infinite;
 }
 @keyframes rotation-animation {
   from {

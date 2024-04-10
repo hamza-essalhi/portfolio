@@ -19,6 +19,7 @@ const BouncingIcon = ({ icon }) => {
 
   const [size, setSize] = useState(iconSize); // State for the icon size
   const [className, setClassName] = useState(""); // State for the icon size
+  const [isIdea, setIsIdea] = useState(true); // State to toggle between idea.png and idea-of.png
 
   const updatePosition = () => {
     setPosition((prevPosition) => {
@@ -74,7 +75,7 @@ const BouncingIcon = ({ icon }) => {
   };
 
   // Update position every 16ms (roughly 60fps)
-  React.useEffect(() => {
+  useEffect(() => {
     const interval = setInterval(updatePosition, 16);
     return () => clearInterval(interval);
   });
@@ -97,26 +98,28 @@ const BouncingIcon = ({ icon }) => {
       return classNames[randomIndex];
     };
   
-    if((icon === "/img/physics.png" || icon === "/img/structure.png")) {
+    if(icon === "/img/physics.png" || icon=== '/img/structure.png') {
       const newClassName = getRandomAnimation();
     setClassName(newClassName);
     }
   }, [icon]);
-  const [isIdea, setIsIdea] = useState(true); // State to toggle between idea.png and idea-of.png
-
   useEffect(() => {
     if (icon === '/img/idea.png') {
       const interval = setInterval(() => {
         setIsIdea((prevIsIdea) => !prevIsIdea);
-      }, 600);
+      }, 300);
 
       return () => clearInterval(interval);
     }
   }, [icon]);
+
   let currentIcon = icon;
   if (icon === '/img/idea.png') {
     currentIcon = isIdea ? '/img/idea.png' : '/img/idea-of.png';
-  } 
+  }
+
+
+ 
   return (
     <div className='random-icons'>
       <motion.img
@@ -137,7 +140,7 @@ const BouncingIcon = ({ icon }) => {
         dragConstraints={dragConstraints}
         dragElastic={0.1}
         onDragEnd={handleDragEnd}
-        className={(icon === "/img/physics.png" || icon === "/img/structure.png") ? `row max-sm:!w-5 max-sm:!h-5 ${className}` : 'row max-sm:!w-5 max-sm:!h-5'}
+        className={icon === "/img/physics.png" || icon=== '/img/structure.png' ? `row max-sm:!max-w-5 max-sm:!max-h-5 ${className}` : 'row max-sm:!max-w-5 max-sm:!max-h-5'}
         src={currentIcon}
         alt={currentIcon}
       />

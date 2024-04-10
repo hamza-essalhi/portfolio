@@ -156,7 +156,7 @@ export default function Home() {
               transition={{ duration: 1 }}
               viewport={{ once: true }}
               key={index}
-              className='max-sm:!text-lg '
+              className='max-sm:!text-lg animated-letter'
             >
               {letter}
             </motion.h1>
