@@ -1,0 +1,27 @@
+ [
+    {
+      "title": "The Complete Front-End Web Development Course",
+      "link": "https://www.udemy.com/certificate/UC-223c8dd1-5767-4bf2-91e3-09cba48ce92a/",
+      "img":"https://udemy-certificate.s3.amazonaws.com/image/UC-223c8dd1-5767-4bf2-91e3-09cba48ce92a.jpg?v=1701633675000"
+    },
+    {
+      "title": "The Complete Full-Stack JavaScript Course",
+      "link": "https://www.udemy.com/certificate/UC-6cc35225-60c6-4d11-a467-5cadbea86b3e/",
+      "img":"https://udemy-certificate.s3.amazonaws.com/image/UC-6cc35225-60c6-4d11-a467-5cadbea86b3e.jpg?v=1701633885000"
+    },
+    {
+      "title": "The Full JavaScript & ES6 Tutorial (including ES7 & React)",
+      "link": "https://www.udemy.com/certificate/UC-8a6bed0d-8ee3-4515-b9b3-00888b69d2cf/",
+      "img":"https://udemy-certificate.s3.amazonaws.com/image/UC-8a6bed0d-8ee3-4515-b9b3-00888b69d2cf.jpg?v=1701633509000"
+    },
+    {
+      "title": "Programming for Everybody (Getting Started with Python) (University of Michigan)",
+      "link": "https://www.coursera.org/account/accomplishments/verify/SVQB7JH2P2VE?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=project",
+      "img":"https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~SVQB7JH2P2VE/CERTIFICATE_LANDING_PAGE~SVQB7JH2P2VE.jpeg"
+    },
+    {
+      "title": "ALX Full Stack Software Engineering | Front-end",
+      "link": "https://intranet.alxswe.com/certificates/J7xMFZ9pS8",
+      "img":"https://alx-intranet-active-storage-production.s3.amazonaws.com/7j4cvenbhf7peqan1y4zugpccjse?response-content-disposition=inline%3B%20filename%3D%2217-short-specializations-certificate-hamza-essalhi.png%22%3B%20filename%2A%3DUTF-8%27%2717-short-specializations-certificate-hamza-essalhi.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20240413%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240413T005616Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=065249366e14d20d7c3cf3f93ff36ec74defac9cc360c5e34b34277a86c3246e"
+    }
+  ]
