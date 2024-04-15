@@ -2,7 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { FaFacebookF, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion"
 import { FaXTwitter } from 'react-icons/fa6';
-import certifications from '../data/certification.json'
+import AboutMe from './AboutMe';
+import Projects from './Projects';
+import ContactMe from './ContactMe';
+
+
 export default function Home() {
   const [spinDegree, setSpinDegree] = useState(0);
   useEffect(() => {
@@ -55,30 +59,11 @@ export default function Home() {
     return letters;
   };
 
-  const handleHover = (event) => {
-    
-    // Animate the image to the center
-    event.target.style.position = 'fixed';
-    event.target.style.top = `5%`;
-    event.target.style.left = `10%`;
-    event.target.style.zIndex = 9999;
-    event.target.style.width = `90%`;
-    event.target.style.transform = `translate(-50%, -50%) scale(1.1)`;
 
-  };
-
-  const handleHoverEnd = (event) => {
-    // Reset the image position when hover ends
-    event.target.style.position = 'static';
-    event.target.style.top = 'auto';
-    event.target.style.left = 'auto';
-    event.target.style.zIndex = 'auto';
-    event.target.style.width = `100%`;
-  };
 
   return (
     <div className='home mx-10 max-sm:mx-3'>
-      <div className="top flex flex-col items-center justify-center gap-5 mx-3">
+      <section id="home" className="top flex flex-col items-center justify-center gap-5 mx-3" >
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -119,7 +104,7 @@ export default function Home() {
             src="/img/Designer.png" alt="" className="w-1/2" />
         </motion.div>
         <div className='flex flex-col icons gap-3 mr-5 max-sm:!relative max-sm:flex-row'>
-          <motion.span
+          <motion.div
             initial={{ y: -700 }}
             animate={{ y: 0 }}
             exit={{ y: -700 }}
@@ -127,12 +112,15 @@ export default function Home() {
               duration: 1, // Change this to control the overall duration of the animation
               ease: "easeInOut", // You can experiment with different easing functions
             }}
-            className='flex gap-2 items-center p-3'><FaFacebookF className='text-3xl icon max-sm:text-3xl' />
-            <span className="max-sm:hidden icon-text">
-              @hamzaessalhi
-            </span>
-          </motion.span>
-          <motion.span
+            className='flex gap-2 items-center p-3 icon-content'>
+            <motion.div whileHover={{ scale: 1.1 }} className='flex items-center gap-2'>
+              <FaFacebookF className='text-3xl icon max-sm:text-3xl' />
+              <span className="max-sm:hidden icon-text">
+                @hamzaessalhi
+              </span>
+            </motion.div>
+          </motion.div>
+          <motion.div
             initial={{ y: -700 }}
             animate={{ y: 0 }}
             exit={{ y: -700 }}
@@ -141,13 +129,16 @@ export default function Home() {
               duration: 1, // Change this to control the overall duration of the animation
               ease: "easeInOut", // You can experiment with different easing functions
             }}
-            className='flex gap-2 items-center p-3'><FaInstagram className='text-3xl icon max-sm:text-3xl' />
-            <span className="max-sm:hidden icon-text">
-              @hamzaessalhi
-            </span>
-          </motion.span>
+            className='flex gap-2 items-center p-3 icon-content'>
+            <motion.div whileHover={{ scale: 1.1 }} className='flex items-center gap-2'>
+              <FaInstagram className='text-3xl icon max-sm:text-3xl' />
+              <span className="max-sm:hidden icon-text">
+                @hamzaessalhi
+              </span>
+            </motion.div>
+          </motion.div>
 
-          <motion.span
+          <motion.div
             initial={{ y: -700 }}
             animate={{ y: 0 }}
             exit={{ y: -700 }}
@@ -156,13 +147,16 @@ export default function Home() {
               duration: 1, // Change this to control the overall duration of the animation
               ease: "easeInOut", // You can experiment with different easing functions
             }}
-            className='flex gap-2 items-center p-3'><FaXTwitter className='text-3xl icon max-sm:text-3xl' />
-            <span className="max-sm:hidden icon-text">
-              @hamzaessalhi
-            </span>
-          </motion.span>
+            className='flex gap-2 items-center p-3 icon-content'>
+            <motion.div whileHover={{ scale: 1.1 }} className='flex items-center gap-2'>
+              <FaXTwitter className='text-3xl icon max-sm:text-3xl' />
+              <span className="max-sm:hidden icon-text">
+                @hamzaessalhi
+              </span>
+            </motion.div>
+          </motion.div>
 
-          <motion.span
+          <motion.div
             initial={{ y: -700 }}
             animate={{ y: 0 }}
             exit={{ y: -700 }}
@@ -171,13 +165,16 @@ export default function Home() {
               duration: 1, // Change this to control the overall duration of the animation
               ease: "easeInOut", // You can experiment with different easing functions
             }}
-            className='flex gap-2 items-center p-3'><FaLinkedin className='text-3xl icon max-sm:text-3xl' />
-            <span className="max-sm:hidden icon-text">
-              @hamzaessalhi
-            </span>
-          </motion.span>
+            className='flex gap-2 items-center p-3 icon-content'>
+            <motion.div whileHover={{ scale: 1.1 }} className='flex items-center gap-2'>
+              <FaLinkedin className='text-3xl icon max-sm:text-3xl' />
+              <span className="max-sm:hidden icon-text">
+                @hamzaessalhi
+              </span>
+            </motion.div>
+          </motion.div>
 
-          <motion.span
+          <motion.div
             initial={{ y: -700 }}
             animate={{ y: 0 }}
             exit={{ y: -700 }}
@@ -186,11 +183,14 @@ export default function Home() {
               duration: 1, // Change this to control the overall duration of the animation
               ease: "easeInOut", // You can experiment with different easing functions
             }}
-            className='flex gap-2 items-center p-3'><FaGithub className='text-3xl icon max-sm:text-3xl' />
-            <span className="max-sm:hidden icon-text">
-              @hamzaessalhi
-            </span>
-          </motion.span>
+            className='flex gap-2 items-center p-3 icon-content'>
+            <motion.div whileHover={{ scale: 1.1 }} className='flex items-center gap-2'>
+              <FaGithub className='text-3xl icon max-sm:text-3xl' />
+              <span className="max-sm:hidden icon-text">
+                @hamzaessalhi
+              </span>
+            </motion.div>
+          </motion.div>
 
 
         </div>
@@ -239,64 +239,12 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="flex gap-4 mx-3 mt-16 flex-col items-center about">
-        <div className="flex flex-col flex-1 items-center">
-          <motion.h1
-          initial={{ x: "-20%", scale: 0 }}
-          whileInView={{ x: 0, scale: 1 }}
-          transition={{ duration: 0.4 }}
-          viewport={{ once: true }}
-            className='my-20 max-sm:!text-lg'>About Me</motion.h1>
-          <motion.p 
-          initial={{ x: "-20%", scale: 0 }}
-          whileInView={{ x: 0, scale: 1 }}
-          transition={{ duration: 0.4 }}
-          viewport={{ once: true }}
-          className=''>Hello! I'm Hamza, a 24-year-old full-stack web developer based in Casablanca. I hold a university degree in Analytical Chemistry and Environment, along with a Bachelor's Degree in Physical Science and Chemistry. I specialize in the MERN stack, crafting dynamic and interactive web applications. I'm passionate about learning and have completed various certifications in web development, including front-end, full-stack JavaScript, and Python programming. My goal is to create efficient, scalable, and user-friendly applications that leave a positive impact.</motion.p>
-          <motion.h1
-          initial={{ x: "-20%", scale: 0 }}
-          whileInView={{ x: 0, scale: 1 }}
-          transition={{ duration: 0.4 }}
-          viewport={{ once: true }} className='my-20 max-sm:!text-lg'>Certifications</motion.h1>
-
-          <div className="certifications flex flex-col gap-5">
-            {
-              certifications.map((certification, i) => (
-                <motion.div
-              
-          initial={{ x: "-20%", scale: 0 }}
-          whileInView={{ x: 0, scale: 1 }}
-          transition={{ duration: 0.4 }}
-          viewport={{ once: true }}
-                 key={i} className={`flex gap-10 w-full max-md:!justify-normal ${i % 2 === 0 ? "justify-end" : "justify-normal"}`}>
-                  <div className="certification p-3 w-2/4 flex flex-col gap-5 max-lg:w-2/3 max-sm:!w-full">
-                    <a href={certification.link} className="my-5">{certification.title}</a>
-                    <div className="image-container relative">
-                      <motion.img
-
-                        src={certification.img}
-                        alt={certification.title}
-                        className="hover-img"
-                        whileHover={{ scale:1.2}}
-                       
-                      />
-
-                    </div>
-                  </div>
-                </motion.div>
-              ))
-            }
-          </div>
-
-        </div>
-
-      </div>
-      <div className="middel flex gap-4 mx-3 mt-16">
-        <div className="col flex-1">1</div>
-        <div className="col flex-1">2</div>
-        <div className="col flex-1">3</div>
-      </div>
+      </section>
+      <AboutMe/>
+      <Projects/>
+      <ContactMe/>
+      
+      
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FaDownload } from 'react-icons/fa';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-scroll';
 import { motion } from 'framer-motion';
 
 export default function TopNav() {
@@ -37,17 +37,64 @@ export default function TopNav() {
         <motion.nav
           key={animationKey}
           className="flex gap-3 justify-center items-center p-5 w-full bg"
-          initial={{ y: navBackground ? -100:0 }}
-          animate={{ y: navBackground ? 0:-100 }}
+          initial={{ y: navBackground ? -100 : 0 }}
+          animate={{ y: navBackground ? 0 : -100 }}
           transition={{ duration: 0.5 }}
         >
+
+
+
+
+
           <div className="flex justify-between items-center w-4/5 max-sm:w-full">
-            <NavLink  to="/">
+            <Link
+              to="home"
+              smooth={true}
+              offset={-70} // Adjust this value to fit your layout
+              duration={500}
+              spy={true}
+              activeClass="active"
+              className="nav-link" // Add a class for styling
+            >
               Home
-            </NavLink>
-            <NavLink to="/projects">Projects</NavLink>
-            <NavLink to="/about-me">About Me</NavLink>
-            <NavLink to="/contact-me">Contact Me</NavLink>
+            </Link>
+
+            <Link
+              to="about"
+              smooth={true}
+              offset={-150} // Adjust this value to fit your layout
+              duration={500}
+              spy={true}
+              activeClass="active"
+              className="nav-link" // Add a class for styling
+            >
+              About Me
+            </Link>
+
+            <Link
+              to="projects"
+              smooth={true}
+              offset={-150} // Adjust this value to fit your layout
+              duration={500}
+              spy={true}
+              activeClass="active"
+              className="nav-link" // Add a class for styling
+            >
+              Projects
+            </Link>
+
+            <Link
+              to="contact"
+              smooth={true}
+              offset={-150} // Adjust this value to fit your layout
+              duration={500}
+              spy={true}
+              activeClass="active"
+              className="nav-link" // Add a class for styling
+            >
+              Contact Me
+            </Link>
+
             <div className="w-2/6 flex justify-end">
               <button className="rounded-full p-3">
                 <span className="max-sm:hidden">Download Cv</span>{' '}
@@ -55,22 +102,65 @@ export default function TopNav() {
               </button>
             </div>
           </div>
+
         </motion.nav>
       ) : (
         <motion.nav
           key={animationKey}
           className="flex gap-3 justify-center items-center p-5 w-full"
-          initial={{ y: !navBackground ? -100:0 }}
-          animate={{ y: !navBackground ? 0:-100 }}
+          initial={{ y: !navBackground ? -100 : 0 }}
+          animate={{ y: !navBackground ? 0 : -100 }}
           transition={{ duration: 0.5 }}
         >
           <div className="flex justify-between items-center w-4/5 max-sm:w-full">
-            <NavLink  to="/">
+            <Link
+              to="home"
+              smooth={true}
+              offset={-70} // Adjust this value to fit your layout
+              duration={500}
+              spy={true}
+              activeClass="active"
+              className="nav-link" // Add a class for styling
+            >
               Home
-            </NavLink>
-            <NavLink to="/projects">Projects</NavLink>
-            <NavLink to="/about-me">About Me</NavLink>
-            <NavLink to="/contact-me">Contact Me</NavLink>
+            </Link>
+
+            <Link
+              to="about"
+              smooth={true}
+              offset={-150} // Adjust this value to fit your layout
+              duration={500}
+              spy={true}
+              activeClass="active"
+              className="nav-link" // Add a class for styling
+            >
+              About Me
+            </Link>
+
+            <Link
+              to="projects"
+              smooth={true}
+              offset={-150} // Adjust this value to fit your layout
+              duration={500}
+              spy={true}
+              activeClass="active"
+              className="nav-link" // Add a class for styling
+            >
+              Projects
+            </Link>
+
+            <Link
+              to="contact"
+              smooth={true}
+              offset={-150} // Adjust this value to fit your layout
+              duration={500}
+              spy={true}
+              activeClass="active"
+              className="nav-link" // Add a class for styling
+            >
+              Contact Me
+            </Link>
+
             <div className="w-2/6 flex justify-end">
               <button className="rounded-full p-3">
                 <span className="max-sm:hidden">Download Cv</span>{' '}
@@ -78,6 +168,11 @@ export default function TopNav() {
               </button>
             </div>
           </div>
+
+
+
+
+
         </motion.nav>
       )}
     </>
