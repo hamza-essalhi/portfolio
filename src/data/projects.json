@@ -1,0 +1,26 @@
+[
+    {
+        "title": "MedicDash",
+        "desc": "MedicDash is a robust health management application built using the MERN (MongoDB, Express.js, React.js, Node.js) stack. It offers a comprehensive suite of features to streamline your health management process.",
+        "images": [
+            "https://raw.githubusercontent.com/hamza-essalhi/portfoloi-images/master/medicdash/4.png",
+            "https://raw.githubusercontent.com/hamza-essalhi/portfoloi-images/master/medicdash/3.png",
+            "https://raw.githubusercontent.com/hamza-essalhi/portfoloi-images/master/medicdash/2.png",
+            "https://raw.githubusercontent.com/hamza-essalhi/portfoloi-images/master/medicdash/1.png"
+        ],
+        "link": "https://medicdash.tech/"
+    },
+    {
+        "title": "DocLocat",
+        "link": "https://github.com/hamza-essalhi/doclocat",
+        "images": [
+            "https://raw.githubusercontent.com/hamza-essalhi/portfoloi-images/master/doclocat/0.png",
+            "https://raw.githubusercontent.com/hamza-essalhi/portfoloi-images/master/doclocat/1.png",
+            "https://raw.githubusercontent.com/hamza-essalhi/portfoloi-images/master/doclocat/2.png",
+            "https://raw.githubusercontent.com/hamza-essalhi/portfoloi-images/master/doclocat/3.png",
+            "https://raw.githubusercontent.com/hamza-essalhi/portfoloi-images/master/doclocat/4.png",
+            "https://raw.githubusercontent.com/hamza-essalhi/portfoloi-images/master/doclocat/5.png"
+        ],
+        "desc": "DOCLOCAT simplifies finding the perfect doctor and scheduling appointments. With real-time notifications and a responsive design, staying connected is effortless. Powered by React.js, Node.js, and Express, DOCLOCAT makes connecting with healthcare professionals a breeze."
+    }
+]
